@@ -1,4 +1,4 @@
-name: Test and lint
+name: Gateway Test and lint
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - '*'
 
 jobs:
-  test:
+  gateway-test:
     runs-on: ubuntu-latest
     steps:
       # Checkout the repository
@@ -22,7 +22,7 @@ jobs:
         run: |
           docker-compose run gateway npm test
 
-  lint:
+  gateway-lint:
     runs-on: ubuntu-latest
     steps:
       # Checkout the repository
