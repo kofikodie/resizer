@@ -14,9 +14,10 @@ describe('e2e test suite', () => {
             query: 'query Health { health{ message} }',
         })
 
-        console.log(response)
         assert(response.body.kind === 'single')
         expect(response.body.singleResult.errors).toBeUndefined()
-        expect(response.body.singleResult.data?.hello).toBe('Hello world!')
+        expect(JSON.stringify(response.body.singleResult.data?.health)).toBe(
+            JSON.stringify({ message: 'OK' }),
+        )
     })
 })
