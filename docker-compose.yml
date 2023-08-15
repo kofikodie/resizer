@@ -8,6 +8,6 @@ services:
     command: ["npm", "run", "start:dev"]
     volumes:
       - ./apps/gateway:/usr/src/app:rw
+      - /usr/src/app/node_modules
     ports:
       - 8888:8888
-
