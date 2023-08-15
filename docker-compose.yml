@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  gateway:
+    tty: true
+    build:
+      context: ./apps/gateway
+      dockerfile: .docker/dev/Dockerfile
+    command: ["npm", "run", "start:dev"]
+    volumes:
+      - ./apps/gateway:/usr/src/app:rw
+    ports:
+      - 8888:8888
+
