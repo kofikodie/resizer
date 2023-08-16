@@ -1,0 +1,29 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {
+    "@types/node": "^20.5.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6"
+  },
+  "scripts": {
+    "migrate:create": "prisma migrate dev --create-only",
+    "migrate:reset": "prisma migrate reset --force",
+    "generate": "prisma generate",
+    "migrate:up": "prisma migrate deploy",
+    "db:seed": "prisma db seed",
+    "fmt": "prisma format"
+  },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^5.1.1",
+    "prisma": "^5.1.1"
+  }
+}
