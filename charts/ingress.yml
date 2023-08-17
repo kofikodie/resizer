@@ -7,7 +7,7 @@ spec:
   - host: af710e3861a694922a7788c89ce10ac7-e41f815623c9be81.elb.eu-west-1.amazonaws.com
     http:
       paths:
-      - path: /
+      - path: /graphql
         pathType: Prefix
         backend:
           service:
