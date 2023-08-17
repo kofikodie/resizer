@@ -18,10 +18,16 @@ spec:
     spec:
       containers:
       - name: gateway
-        image: 317884193661.dkr.ecr.eu-west-1.amazonaws.com/isolates:00e0a526b459c6ad0b31382a62396db714d29b2d
+        image: 317884193661.dkr.ecr.eu-west-1.amazonaws.com/isolates:47781a8a53cc8d3c923b4e0f41bdef539820dc7f
         ports:
         - containerPort: 8889
         env:
         - name: LOGIN_SERVICE_BASE_URI
           value: "http://login-service:8888"
-
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "1000m"
+          requests:
+            memory: "256Mi"
+            cpu: "500m"

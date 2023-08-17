@@ -23,7 +23,9 @@
     "test": "jest --runInBand --forceExit --config jest.config.json ./tests",
     "nodemon": "nodemon --exec ts-node src/index.ts",
     "start:dev": "nodemon --watch src --ext ts -L --exec npm run nodemon",
-    "lint": "eslint --ignore-path .eslintignore --ext .js,.ts ."
+    "lint": "eslint --ignore-path .eslintignore --ext .js,.ts .",
+    "build": "tsc --build tsconfig.json",
+    "start": "node dist/index.js"
   },
   "keywords": [],
   "author": "",

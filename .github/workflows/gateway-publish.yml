@@ -40,7 +40,7 @@ jobs:
         #cd apps/gateway/.docker/dev/
         working-directory: ./apps/gateway/
         run: |
-          docker build -f .docker/dev/Dockerfile -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+          docker build -f .docker/prod/Dockerfile -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
 
       # Checkout the repository
