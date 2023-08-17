@@ -9,6 +9,10 @@ const users: Prisma.UserCreateInput[] = [
         first_name: 'Alice',
         last_name: 'Wonderland',
         date_of_birth: new Date('1990-01-01'),
+        passowrd_salt:
+            'Yaj+htJ5jekvDQJvabbLRSMvEGdVMU9PYiS72tBfVPja63FDQbbzFxGHCrc9Yj/gvd9XbgsD4etkjI2a9RXmZ+F5/ePsRtOH7prK3zKmaSNgpS5npM4fjGILOmudmjWMRVsTyJxDUrNh9Y59kQYIrGo5VG3TPyGsjzrSlsm2AQ8=',
+        password_hash:
+            '2cb01b11637b02e43fe1ea822f4078f306ccfa388881f7b5aeb12c859eaa2a946086d7e6a64e281bc98ac53843c415cb324043649d986bf7a408eebe37f2f46e',
     },
     {
         username: 'bob_marley',
@@ -17,6 +21,10 @@ const users: Prisma.UserCreateInput[] = [
         first_name: 'Bob',
         last_name: 'Marley',
         date_of_birth: new Date('1991-01-01'),
+        passowrd_salt:
+            'Yaj+htJ5jekvDQJvabbLRSMvEGdVMU9PYiS72tBfVPja63FDQbbzFxGHCrc9Yj/gvd9XbgsD4etkjI2a9RXmZ+F5/ePsRtOH7prK3zKmaSNgpS5npM4fjGILOmudmjWMRVsTyJxDUrNh9Y59kQYIrGo5VG3TPyGsjzrSlsm2AQ8=',
+        password_hash:
+            '2cb01b11637b02e43fe1ea822f4078f306ccfa388881f7b5aeb12c859eaa2a946086d7e6a64e281bc98ac53843c415cb324043649d986bf7a408eebe37f2f46e',
     },
 ]
 

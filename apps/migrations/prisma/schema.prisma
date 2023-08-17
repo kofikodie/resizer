@@ -17,6 +17,8 @@ model User {
   date_of_birth DateTime
   created_at    DateTime  @default(now())
   updated_at    DateTime  @updatedAt
+  password_salt String
+  password_hash String
   pictures      Picture[]
 
   @@index([email], name: "email")
