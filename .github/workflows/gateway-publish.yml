@@ -49,7 +49,7 @@ jobs:
       - name: Update Argo CI manifest
         run: |
           ls
-          sed -i "s|image: .*|image: ${{ steps.login-ecr.outputs.registry }}/isolates:${{ steps.commit_sha.outputs.sha }}|g" charts/gateway-deployment.yml
+          sed -i "s|image: .*|image: ${{ steps.login-ecr.outputs.registry }}/isolates:${{ steps.commit_sha.outputs.sha }}|g" charts/gateway/gateway-deployment.yml
       
       - name: Commit and push changes
         uses: devops-infra/action-commit-push@v0.3
