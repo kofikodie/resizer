@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: gateway
-        image: 317884193661.dkr.ecr.eu-west-1.amazonaws.com/isolates:47781a8a53cc8d3c923b4e0f41bdef539820dc7f
+        image: 317884193661.dkr.ecr.eu-west-1.amazonaws.com/isolates:a009149fc3335075ecdfa203ad157963ac951cd8
         ports:
         - containerPort: 8889
         env:
