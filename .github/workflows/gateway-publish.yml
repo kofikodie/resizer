@@ -8,6 +8,10 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    
+    permissions:
+      issues: write
+      pull-requests: write
     steps:
       # Checkout the repository
       - uses: actions/checkout@v2
