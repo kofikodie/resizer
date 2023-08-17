@@ -30,7 +30,6 @@ export class MysqlConnectionStub implements Connection {
                 password_hash:
                     '2cb01b11637b02e43fe1ea822f4078f306ccfa388881f7b5aeb12c859eaa2a946086d7e6a64e281bc98ac53843c415cb324043649d986bf7a408eebe37f2f46e',
             },
-            ,
         ])
     }
 }

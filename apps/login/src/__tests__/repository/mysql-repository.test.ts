@@ -1,7 +1,7 @@
 import { UserBuilder } from '../../builder/user/user-builder'
 import { DatabaseRepository } from '../../repository/database-repository'
 import { PasswordService } from '../../service/password-service'
-import { MysqlConnectionStub } from '../stubs/adapter/mysql-connection'
+import { MysqlConnectionStub } from '../../helplers/stubs/adapter/mysql-connection'
 
 describe('Database Respository', () => {
     it('should return null when user is not found', async () => {

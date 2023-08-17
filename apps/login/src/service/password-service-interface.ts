@@ -1,4 +1,4 @@
-export interface PasswordServiceInterface {
+export type PasswordServiceInterface = {
     encryptPassword(password: string): EncryptedData
     comparePassword(password: string, encryptedPassword: EncryptedData): boolean
 }

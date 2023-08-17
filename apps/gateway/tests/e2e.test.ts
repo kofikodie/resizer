@@ -6,7 +6,7 @@ import nock from 'nock'
 import dotenv from 'dotenv'
 dotenv.config()
 
-nock(`${process.env.LOGIN_SERVICE_BASE_URI}/api/v1/login`)
+nock(`http://login:8889/api/v1/login`)
     .post('')
     .reply(200, { token: 'valid-token' })
 

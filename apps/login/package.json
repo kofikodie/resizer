@@ -8,7 +8,8 @@
     "nodemon": "nodemon --exec ts-node src/index.ts",
     "start:dev": "nodemon --watch src --ext ts -L --exec npm run nodemon",
     "build": "tsc",
-    "test": "jest --runInBand --forceExit --config jest.config.json ./__tests__"
+    "test": "jest --runInBand --forceExit --config jest.config.json ./__tests__",
+    "lint": "eslint --ignore-path .eslintignore --ext .js,.ts ."
   },
   "keywords": [],
   "author": "",

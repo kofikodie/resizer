@@ -1,13 +1,13 @@
 import { User } from './types'
 
-export interface Respository {
+export type Respository = {
     getUserByEmailAndPassword(
         email: string,
         password: string,
     ): Promise<User | null>
 }
 
-export interface Connection {
+export type Connection = {
     connect(): Promise<void | ExecutableBase>
     end(options?: any): Promise<void>
 }

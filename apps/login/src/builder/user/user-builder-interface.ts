@@ -1,5 +1,5 @@
 import { User } from "../../repository/types";
 
-export interface UserBuilderInterface {
+export type UserBuilderInterface = {
     build(userData: any): User | null;
 }
