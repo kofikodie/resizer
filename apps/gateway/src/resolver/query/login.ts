@@ -6,7 +6,7 @@ export const login = {
     login: async (parent: unknown, args: { email: string; password: string }) => {
         const { email, password } = args
         if (!process.env.LOGIN_SERVICE_BASE_URI) {
-            throw new Error(`LOGIN_SERVICE_BASE_URI is not defined ${process.env.LOGIN_SERVICE_BASE_URI}`)
+            throw new Error(`LOGIN_SERVICE_BASE_URI is not defined`)
         }
 
         try {
