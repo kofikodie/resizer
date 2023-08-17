@@ -23,7 +23,7 @@ jobs:
       #Create env file
       - name: Create env file
         run: |
-          echo "LOGIN_SERVICE_BASE_URI=${{ secrets.LOGIN_SERVICE_BASE_URI }}" > .env
+          echo "LOGIN_SERVICE_BASE_URI=${{ secrets.LOGIN_SERVICE_BASE_URI }}" > ./apps/gateway/.env
 
       # Run tests in a Docker container
       - name: Run tests
