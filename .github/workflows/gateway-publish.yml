@@ -38,7 +38,7 @@ jobs:
           IMAGE_TAG: ${{ steps.commit_sha.outputs.sha }}
         #cd apps/gateway/.docker/dev/
         run: |
-          cd apps/gateway/
+          cd ./apps/gateway/
           docker build -f ./docker/dev -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
 
