@@ -13,4 +13,4 @@ COPY --from=build /usr/src/app/package*.json ./
 COPY --from=build /usr/src/app/dist ./dist
 RUN npm install --production
 EXPOSE 8889
-CMD ["node", "dist/index.js"]
+CMD ["node", "dist/src/index.js"]
