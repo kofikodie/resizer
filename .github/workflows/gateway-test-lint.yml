@@ -1,7 +1,7 @@
 name: Gateway Test and lint
 
 env:
-  DATABASE_URL: ${{ secrets.LOGIN_SERVICE_BASE_URI }}
+  LOGIN_SERVICE_BASE_URI: ${{ secrets.LOGIN_SERVICE_BASE_URI }}
 
 on:
   push:
