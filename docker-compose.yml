@@ -11,3 +11,35 @@ services:
       - /usr/src/app/node_modules
     ports:
       - 8888:8888
+  mysql: 
+    image: mysql:8.1.0
+    ports:
+      - 3307:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: local-resizer
+      MYSQL_USER: resizer-user
+      MYSQL_PASSWORD: resizer-password
+  login:
+    tty: true
+    build:
+      context: ./apps/login
+      dockerfile: .docker/dev/Dockerfile
+    command: ["npm", "run", "start:dev"]
+    volumes:
+      - ./apps/login:/usr/src/app:rw
+      - /usr/src/app/node_modules
+    ports:
+      - 8889:8889
+    depends_on:
+      - mysql
+  migrations:
+    tty: true
+    build:
+      context: ./apps/migrations
+      dockerfile: .docker/dev/Dockerfile
+    volumes:
+      - ./apps/migrations:/usr/src/app:rw
+      - /usr/src/app/node_modules
+    depends_on:
+      - mysql

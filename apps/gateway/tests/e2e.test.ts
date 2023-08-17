@@ -1,7 +1,14 @@
 import { ApolloServer } from '@apollo/server'
 import { typeDefs } from '../src/types'
-import { resolvers } from '../src/resolver/query/health'
 import assert from 'node:assert'
+import { resolvers } from '../src/resolver/query'
+import nock from 'nock'
+import dotenv from 'dotenv'
+dotenv.config()
+
+nock(`http://login:8889/api/v1/login`)
+    .post('')
+    .reply(200, { token: 'valid-token' })
 
 describe('e2e test suite', () => {
     it('returns OK with for HEALTH query', async () => {
@@ -19,5 +26,21 @@ describe('e2e test suite', () => {
         expect(JSON.stringify(response.body.singleResult.data?.health)).toBe(
             JSON.stringify({ message: 'OK' }),
         )
+    })
+
+    it('return valid token for LOGIN query', async () => {
+        const testServer = new ApolloServer({
+            typeDefs,
+            resolvers,
+        })
+
+        const response = await testServer.executeOperation({
+            query: 'query Login($email: String!, $password: String!) { login(email: $email, password: $password) }',
+            variables: { email: 'bobmarley@resizer.com', password: '1' },
+        })
+
+        assert(response.body.kind === 'single')
+        expect(response.body.singleResult.errors).toBeUndefined()
+        expect(response.body.singleResult.data?.login).toBeDefined()
     })
 })

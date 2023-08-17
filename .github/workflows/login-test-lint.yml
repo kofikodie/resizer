@@ -1,7 +1,4 @@
-name: Gateway Test and lint
-
-env:
-  LOGIN_SERVICE_BASE_URI: ${{ secrets.LOGIN_SERVICE_BASE_URI }}
+name: Login Test and lint
 
 on:
   push:
@@ -9,7 +6,7 @@ on:
       - '*'
 
 jobs:
-  gateway-test:
+  login-test:
     runs-on: ubuntu-latest
     steps:
       # Checkout the repository
@@ -18,19 +15,14 @@ jobs:
       # Build the Docker image
       - name: Build the image
         run: |
-          docker-compose build -t gateway .
-
-      #Create env file
-      - name: Create env file
-        run: |
-          echo "LOGIN_SERVICE_BASE_URI=${{ secrets.LOGIN_SERVICE_BASE_URI }}" > ./apps/gateway/.env
+          docker-compose build -t login .
 
       # Run tests in a Docker container
       - name: Run tests
         run: |
-          docker-compose run gateway npm test
+          docker-compose run login npm test
 
-  gateway-lint:
+  login-lint:
     runs-on: ubuntu-latest
     steps:
       # Checkout the repository
@@ -39,4 +31,4 @@ jobs:
       # Run linting in a Docker container
       - name: Run linting
         run: |
-          docker-compose run gateway npm run lint
+          docker-compose run login npm run lint
