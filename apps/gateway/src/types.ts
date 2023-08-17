@@ -6,4 +6,8 @@ export const typeDefs = `
     type Query {
         health: HealthResponse!
     }
+
+    type Query {
+        login(email: String!, password: String!): String!
+    }
 `

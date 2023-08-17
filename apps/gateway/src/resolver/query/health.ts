@@ -1,4 +1,4 @@
-export const resolvers = {
+export const health = {
     Query: {
         health: () => {
             return {
