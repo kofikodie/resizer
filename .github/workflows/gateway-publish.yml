@@ -37,8 +37,8 @@ jobs:
           ECR_REPOSITORY: isolates
           IMAGE_TAG: ${{ steps.commit_sha.outputs.sha }}
         #cd apps/gateway/.docker/dev/
+        working-directory: ./apps/gateway/
         run: |
-          cd ./apps/gateway/
           docker build -f ./docker/dev -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
 
