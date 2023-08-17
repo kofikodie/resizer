@@ -4,7 +4,7 @@ metadata:
   name: gateway-ingress
 spec:
   rules:
-  - host: a3571b5a6473049e094b1d68fcb65f94-06c8d12de00fe176.elb.eu-west-1.amazonaws.com
+  - host: af710e3861a694922a7788c89ce10ac7-e41f815623c9be81.elb.eu-west-1.amazonaws.com
     http:
       paths:
       - path: /
