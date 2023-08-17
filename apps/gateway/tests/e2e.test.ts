@@ -2,6 +2,13 @@ import { ApolloServer } from '@apollo/server'
 import { typeDefs } from '../src/types'
 import assert from 'node:assert'
 import { resolvers } from '../src/resolver/query'
+import nock from 'nock'
+import dotenv from 'dotenv'
+dotenv.config()
+
+nock(`${process.env.LOGIN_SERVICE_BASE_URI}/api/v1/login`)
+    .post('')
+    .reply(200, { token: 'valid-token' })
 
 describe('e2e test suite', () => {
     it('returns OK with for HEALTH query', async () => {
@@ -29,7 +36,7 @@ describe('e2e test suite', () => {
 
         const response = await testServer.executeOperation({
             query: 'query Login($email: String!, $password: String!) { login(email: $email, password: $password) }',
-            variables: { email: 'bobmarley@resizer.com' , password: '1' },
+            variables: { email: 'bobmarley@resizer.com', password: '1' },
         })
 
         assert(response.body.kind === 'single')
